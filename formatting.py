@@ -7,6 +7,7 @@ comment
 '''
 
 # put your name HERE
+# Jonah Gross
 # https://github.com/fwparkercode/Programming2_SP19
 # New change
 
@@ -14,14 +15,13 @@ comment
 PROBLEM 1 (2pts)
 Use {}.format() to print 0.000321192 in scientific notation to two decimals
 '''
-
+print('{:.2e}'.format(.000321192))
 '''
 PROBLEM 2 (2pts)
 You get 8 out of 9 on a quiz.
 Print 8/9 using {}.format() so that it appears as 89%
 '''
-
-
+print('{:.0f}%'.format(8/9 * 100))
 '''
 PROBLEM 3 (3pts)
 Take the following program:
@@ -43,6 +43,10 @@ Make sure the print formatting works for any integer from zero to nine million.
 Do not use any concatenation in your code (no plus signs). 
 You should only have two double quotes in each print statement.
 '''
+score = 41237
+highscore = 1023407
+print("Score: {:15,}".format(score))
+print("High score: {:10,}".format(highscore))
 
 
 '''
@@ -70,3 +74,5 @@ Use print formatting to EXACTLY match the following output:
 1/19 = 0.0526
 1/20 = 0.05
 '''
+for i in range(1, 20):
+    print('1/{:<2} = {:.3}'.format(i, 1/i))
