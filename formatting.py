@@ -74,5 +74,5 @@ Use print formatting to EXACTLY match the following output:
 1/19 = 0.0526
 1/20 = 0.05
 '''
-for i in range(1, 20):
+for i in range(1, 21):
     print('1/{:<2} = {:.3}'.format(i, 1/i))
