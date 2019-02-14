@@ -65,7 +65,9 @@ def shuffle(deck):
     return new_deck
 new_deck = shuffle(deck)
 
+print(new_deck)
 print(new_deck[0:5])
+
 # PROBLEM 4 (Illinois Pick 4 - 10pts)
 # Lotteries are known to give awful odds of winning, and incredibly low expected returns on your invevestment.
 # You will buy 10000 Illinois Pick 4 tickets in a simulation.
@@ -74,3 +76,28 @@ print(new_deck[0:5])
 # After drawing the official numbers, you will go back through your list and check to see how many wins you got.
 # The numbers must be an exact match in the exact position.
 # Each ticket is $1.  If you win, you get $5000.  Simulate spending $10,000 on Pick 4 tickets, and see your return.
+
+my_picks = []
+draw_num = 10000
+for i in range(draw_num):
+    spot_1 = str(random.randrange(10))
+    spot_2 = str(random.randrange(10))
+    spot_3 = str(random.randrange(10))
+    spot_4 = str(random.randrange(10))
+    little_list = []
+    little_list.append(spot_1 + spot_2 + spot_3 + spot_4)
+    my_picks.append(little_list)
+
+real_num = []
+spot_1 = str(random.randrange(10))
+spot_2 = str(random.randrange(10))
+spot_3 = str(random.randrange(10))
+spot_4 = str(random.randrange(10))
+real_num.append(spot_1 + spot_2 + spot_3 + spot_4)
+
+profit = -draw_num
+prize = 5000
+for i in my_picks:
+    if real_num == i:
+        profit += prize
+print(profit)
