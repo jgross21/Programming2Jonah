@@ -71,47 +71,66 @@ pic = ['''
  / \  |
       |
 =========''']
-word_list = ['Goatfish',  'homeomorphic', 'whiggism', 'lumpily', 'calico', 'Unmaledictive', 'headnote', 'dragon', 'pickwick', 'assad', 'Garnishment', 'prebreathing', 'streamline', 'revers', 'righteous', 'Hyperhypocrisy', 'advantage', 'jingler', 'procne', 'tellurium', 'Socket', 'spencer', 'moly', 'propagandized', 'fantasy']
+word_list = ['Bears',  'Vikings', 'Lions', 'Packers', 'Falcons', 'Panthers', 'Saints', 'Buccaneers', 'Eagles', 'Cowboys', 'Redskins', '49ers', 'Seahawks', 'Rams', 'Cardinals', 'Jaguars', 'Colts', 'Texans', 'Titans', 'Patriots', 'Dolphins', 'Jets', 'Bills', 'Giants', 'Browns', 'Ravens', 'Steelers', 'Bengals', 'Broncos', 'Raiders', 'Chargers', 'Chiefs']
 
-print('Welcome to hangman!')
+print('Welcome to NFL hangman! All words are NFL tams')
 
 done = False
-wrong_letters = []
-wrong_letters_num = [len(wrong_letters)]
+used_letters = []
 word = word_list.pop(random.randrange(len(word_list)))
 chosen = word.upper()
 pic_num = 0
-
-
+correct = 0
 
 while done == False:
     print(pic[pic_num])
     print('Used letters:', end=' ')
-    for i in wrong_letters:
+    for i in used_letters:
         print(i, end=' ')
     print()
-    for i in range (len(chosen)):
-        print(end='_ ')
+    print()
+    for letter in chosen:
+        if letter in used_letters:
+            print(end=letter + ' ')
+        else:
+            print(end="_ ")
     print()
     print()
     q = input('Pick a letter: ')
     user_letter = q.upper()
+    used_letters.append(user_letter)
+    if used_letters.count(user_letter) >= 2:
+        user_letter = used_letters.pop()
+        print('You already used that letter')
+        correct -= 1
+        if user_letter not in chosen:
+            pic_num -= 1
     if user_letter not in chosen:
-        wrong_letters.append(user_letter)
         pic_num += 1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    elif user_letter in chosen:
+        for i in range (chosen.count(user_letter)):
+            correct += 1
+    if pic_num == 6:
+        print(pic[6])
+        #done = True
+        print('You Lose!')
+        ask = input("Do you want to play again?")
+    if correct == len(chosen):
+        for letter in chosen:
+            print(letter, end=' ')
+        #done = True
+        print()
+        print()
+        print('You win!')
+        ask = input("Do you want to play again?")
+        if ask.upper() == 'NO':
+            done = True
+        if ask.upper() == 'YES':
+            print('Welcome to NFL hangman! All words are NFL tams')
+            done = False
+            used_letters = []
+            word = word_list.pop(random.randrange(len(word_list)))
+            chosen = word.upper()
+            pic_num = 0
+            correct = 0
 
