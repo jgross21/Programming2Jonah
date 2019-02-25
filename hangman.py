@@ -71,9 +71,9 @@ pic = ['''
  / \  |
       |
 =========''']
-word_list = ['Bears',  'Vikings', 'Lions', 'Packers', 'Falcons', 'Panthers', 'Saints', 'Buccaneers', 'Eagles', 'Cowboys', 'Redskins', '49ers', 'Seahawks', 'Rams', 'Cardinals', 'Jaguars', 'Colts', 'Texans', 'Titans', 'Patriots', 'Dolphins', 'Jets', 'Bills', 'Giants', 'Browns', 'Ravens', 'Steelers', 'Bengals', 'Broncos', 'Raiders', 'Chargers', 'Chiefs']
+word_list = ['Bears',  'Vikings', 'Lions', 'Packers', 'Falcons', 'Panthers', 'Saints', 'Buccaneers', 'Eagles', 'Cowboys', 'Redskins', '49ers', 'Seahawks', 'Rams', 'Cardinals', 'Jaguars', 'Colts', 'Texans', 'Titans', 'Patriots', 'Dolphins', 'Jets', 'Bills', 'Giants', 'Browns', 'Ravens', 'Steelers', 'Bengals', 'Broncos', 'Raiders', 'Chargers', 'Chiefs', 'Yankees', 'Phillies', 'Redsox', 'Dodgers', 'Cubs', 'Mets', 'Padres', 'Braves', 'Cardinals', 'Astros', 'Bluejays', 'Whitesox', 'Angels', 'Mariners', 'Brewers', 'Reds', 'Tigers', 'Indians', 'Orioles', 'Twins', 'Athletics', 'Nationals', 'Pirates', 'Rangers', 'Marlins', 'Rays', 'Diamondbacks', 'Rockies', 'Royals']
 
-print('Welcome to NFL hangman! All words are NFL tams')
+print('Welcome to NFL/MLB hangman! All words are NFL/MLB tams')
 
 done = False
 used_letters = []
@@ -126,11 +126,13 @@ while done == False:
         if ask.upper() == 'NO':
             done = True
         if ask.upper() == 'YES':
-            print('Welcome to NFL hangman! All words are NFL tams')
+            print('Welcome to NFL/MLB hangman! All words are NFL/MLB tams')
             done = False
             used_letters = []
             word = word_list.pop(random.randrange(len(word_list)))
             chosen = word.upper()
             pic_num = 0
             correct = 0
+        else:
+            print('That\'s not an answer, so I guess you\'re done!')
 
