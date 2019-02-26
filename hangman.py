@@ -73,7 +73,7 @@ pic = ['''
 =========''']
 word_list = ['Bears',  'Vikings', 'Lions', 'Packers', 'Falcons', 'Panthers', 'Saints', 'Buccaneers', 'Eagles', 'Cowboys', 'Redskins', '49ers', 'Seahawks', 'Rams', 'Cardinals', 'Jaguars', 'Colts', 'Texans', 'Titans', 'Patriots', 'Dolphins', 'Jets', 'Bills', 'Giants', 'Browns', 'Ravens', 'Steelers', 'Bengals', 'Broncos', 'Raiders', 'Chargers', 'Chiefs', 'Yankees', 'Phillies', 'Redsox', 'Dodgers', 'Cubs', 'Mets', 'Padres', 'Braves', 'Cardinals', 'Astros', 'Bluejays', 'Whitesox', 'Angels', 'Mariners', 'Brewers', 'Reds', 'Tigers', 'Indians', 'Orioles', 'Twins', 'Athletics', 'Nationals', 'Pirates', 'Rangers', 'Marlins', 'Rays', 'Diamondbacks', 'Rockies', 'Royals']
 
-print('Welcome to NFL/MLB hangman! All words are NFL/MLB tams')
+print('Welcome to NFL/MLB hangman! All words are NFL/MLB teams')
 
 done = False
 used_letters = []
