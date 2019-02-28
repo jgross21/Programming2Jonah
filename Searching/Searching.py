@@ -1,4 +1,4 @@
-file = open('data/super_villans.txt', 'r')  # Open file to read
+file = open('Searching/Data/super_villains.txt', 'r')  # Open file to read
 
 print(file)
 
@@ -14,11 +14,11 @@ file.close()  # ends your access to file
 
 # Open a file to write (Overwrites all previous)
 '''
-file = open('data/super_villans.txt', 'w')  # Open file to write
+file = open('Searching/Data/super_villains.txt', 'w')  # Open file to write
 file.write('Lee the Merciless\n')
 file.close()
 
-file = open('data/super_villans.txt', 'r')  # Open file to read
+file = open('Searching/Data/super_villains.txt', 'r')  # Open file to read
 for line in file:
     print(line.strip()) # Strip method removes any extra spaces, \t, \n
 
@@ -27,11 +27,11 @@ file.close()
 '''
 
 # Open a file to append(does not overwrite)
-file = open('data/super_villans.txt', 'a')  # Open file to append
+file = open('Searching/Data/super_villains.txt', 'a')  # Open file to append
 file.write('Dan the Man\n')
 file.close()
 
-file = open('Data/super_villans.txt', 'r')  # Open file to read
+file = open('Searching/Data/super_villains.txt', 'r')  # Open file to read
 print()
 for line in file:
     print(line.strip())
@@ -39,13 +39,13 @@ for line in file:
 file.close()
 
 # You can make a new file by opening to write
-file = open('Data/oscars.txt', 'w')
+file = open('Searching/Data/oscars.txt', 'w')
 file.write('Green Book\tBest Picture\n ')
 file.close()
 
 # better way to open and close a file
 
-with open('Data/super_villans.txt') as f:
+with open('Searching/Data/super_villains.txt') as f:
     for line in f:
         print(line.strip())
     read_data = f.read() # big ol' string
@@ -53,8 +53,8 @@ with open('Data/super_villans.txt') as f:
 # File automatically closes from with statement
 print(read_data)
 
-# Read data into a list (array)
-with open('Data/super_villans.txt') as f:
+# Read Searching/Data into a list (array)
+with open('Searching/Data/super_villains.txt') as f:
     villans = [x.strip().upper() for  x in f]
 
 print(villans)
@@ -110,7 +110,7 @@ text = 'Hello, this is Alexa\'s phone'
 line = split_line(text)
 print(line)
 
-file = open('Data/super_villans.txt')
+file = open('Searching/Data/super_villains.txt')
 
 for line in file:
     line = line.strip()

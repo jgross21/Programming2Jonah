@@ -7,6 +7,14 @@ from class and from Ch15 of the textbook website
 # word in the provided dictionary.  If there are more
 # than one longest word, print them all.
 
+# This function takes in a line of text and returns
+# a list of words in the line.
+import re
+
+def split_line(line):
+    return re.findall('[A-Za-z]+(?:\'[A-Za-z]+)?', line)
+
+
 #2.  (8pts)  Write code which finds
 # The total word count AND average word length
 # in "AliceInWonderLand.txt"
