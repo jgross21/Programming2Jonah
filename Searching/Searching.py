@@ -55,6 +55,44 @@ print(read_data)
 
 # Read data into a list (array)
 with open('data/super_villans.txt') as f:
-    villans = [x.strip() for  x in f]
+    villans = [x.strip().upper() for  x in f]
 
 print(villans)
+
+# Linear Search
+print(villans.index('RENARD THE TORTURER'))
+
+key = 'YASMIN DEL CORVIDA'
+i = 0 # the index of my search
+
+while i < (len(villans) - 1) and key != villans[i]:
+    i += 1
+
+if i < len(villans):
+    print('Found', key, 'at position', i)
+else:print('Could not find key')
+
+# Binary Search
+villans.sort()
+
+key = 'THEODORA THE WICKED'
+lower_bound = 0
+upper_bound = len(villans)
+found = False
+loops = 0
+
+# Loop until we find it
+
+while lower_bound <= upper_bound and not found:
+    middle_pos = (upper_bound + lower_bound) // 2
+    loops += 1
+    if villans[middle_pos] < key:
+        lower_bound = middle_pos + 1
+    elif villans[middle_pos] > key:
+        upper_bound = middle_pos - 1
+    else:
+        found = True
+if found:
+    print(key, 'was found at position', middle_pos, 'after', loops, 'loops')
+else:
+    print('Key was not found')

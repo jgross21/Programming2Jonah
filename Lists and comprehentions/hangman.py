@@ -115,6 +115,18 @@ while done == False:
         #done = True
         print('You Lose!')
         ask = input("Do you want to play again?")
+        if ask.upper() == 'NO':
+            done = True
+        if ask.upper() == 'YES':
+            print('Welcome to NFL/MLB hangman! All words are NFL/MLB tams')
+            done = False
+            used_letters = []
+            word = word_list.pop(random.randrange(len(word_list)))
+            chosen = word.upper()
+            pic_num = 0
+            correct = 0
+        else:
+            print('That\'s not an answer, so I guess you\'re done!')
     if correct == len(chosen):
         for letter in chosen:
             print(letter, end=' ')
@@ -135,5 +147,3 @@ while done == False:
             correct = 0
         else:
             print('That\'s not an answer, so I guess you\'re done!')
-
-
