@@ -96,3 +96,24 @@ if found:
     print(key, 'was found at position', middle_pos, 'after', loops, 'loops')
 else:
     print('Key was not found')
+
+import re
+
+
+# This function takes in a line of text and returns
+# a list of words in the line.
+def split_line(line):
+    return re.findall('[A-Za-z]+(?:\'[A-Za-z]+)?', line)
+
+text = 'Hello, this is Alexa\'s phone'
+
+line = split_line(text)
+print(line)
+
+file = open('data/super_villans.txt')
+
+for line in file:
+    line = line.strip()
+    words = split_line(line)
+    for word in words:
+        print(word)
