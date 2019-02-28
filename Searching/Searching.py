@@ -31,7 +31,7 @@ file = open('data/super_villans.txt', 'a')  # Open file to append
 file.write('Dan the Man\n')
 file.close()
 
-file = open('data/super_villans.txt', 'r')  # Open file to read
+file = open('Data/super_villans.txt', 'r')  # Open file to read
 print()
 for line in file:
     print(line.strip())
@@ -39,13 +39,13 @@ for line in file:
 file.close()
 
 # You can make a new file by opening to write
-file = open('data/oscars.txt', 'w')
+file = open('Data/oscars.txt', 'w')
 file.write('Green Book\tBest Picture\n ')
 file.close()
 
 # better way to open and close a file
 
-with open('data/super_villans.txt') as f:
+with open('Data/super_villans.txt') as f:
     for line in f:
         print(line.strip())
     read_data = f.read() # big ol' string
@@ -54,7 +54,7 @@ with open('data/super_villans.txt') as f:
 print(read_data)
 
 # Read data into a list (array)
-with open('data/super_villans.txt') as f:
+with open('Data/super_villans.txt') as f:
     villans = [x.strip().upper() for  x in f]
 
 print(villans)
@@ -110,7 +110,7 @@ text = 'Hello, this is Alexa\'s phone'
 line = split_line(text)
 print(line)
 
-file = open('data/super_villans.txt')
+file = open('Data/super_villans.txt')
 
 for line in file:
     line = line.strip()
