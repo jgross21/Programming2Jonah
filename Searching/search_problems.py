@@ -61,6 +61,7 @@ print(avg)
 # How many times does "Cat" occur?
 # How many times does "Cheshire" immediately followed by "Cat" occur?
 
+
 #### OR #####
 
 #3  (12pts)Find the most frequently occurring
