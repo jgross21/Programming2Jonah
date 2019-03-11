@@ -68,7 +68,7 @@ print(avg)
 # seven letter word in "AliceInWonderLand.txt"
 seven = []
 for i in alice_word_list:
-    if len(i) == 7:
+    if len(i) == 6:
         seven.append(i)
 seven_counts = []
 for i in seven:
