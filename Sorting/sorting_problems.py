@@ -55,6 +55,7 @@ def ins_sort(list):
     return list
 
 
+
 print(ins_sort(sort_me2))
 
 # Problem 4 - Efficiency? (10 pts)
