@@ -1,5 +1,12 @@
 
 #Turtle Recursion (25pts)
+import turtle
+
+my_turtle = turtle.Turtle()
+my_turtle.speed(8)
+my_turtle.width(3)
+my_turtle.shape('turtle')
+my_screen = turtle.Screen()
 
 #1)  Using the turtle library, create the H fractal pattern according to the file shown in the data folder. (10pts)  
 
@@ -21,3 +28,5 @@
 #  Have fun!
  
 #  Resource to help you out >>> https://docs.python.org/3.3/library/turtle
+
+my_screen.exitonclick()
