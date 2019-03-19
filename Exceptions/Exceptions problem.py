@@ -8,8 +8,8 @@
 # r is the center to center distance between the objects in meters
 
 
-# Make a calculator that does all of the following 
-# (3pts) takes the inputs for mass 1, mass 2.and distance between the two objects (m1, m2, and r) 
+# Make a calculator that does all of the following
+# (3pts) takes the inputs for mass 1, mass 2.and distance between the two objects (m1, m2, and r)
 # (4pts) contains exceptions for any potential errors (value and dividebyzero).
 # (3pts) keeps asking for inputs until they are valid (see while loop from notes)
 # (4pts) calculate the force of gravity in Newtons and print the result to the user in scientific notation to two decimals.
