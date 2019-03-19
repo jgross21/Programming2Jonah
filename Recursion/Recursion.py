@@ -24,9 +24,10 @@ def controlled(level, end_level):
 controlled(0, 10)
 
 import turtle
+import random
 
 my_turtle = turtle.Turtle()
-my_turtle.speed(4)
+my_turtle.speed(8)
 my_turtle.width(3)
 my_turtle.shape('turtle')
 my_screen = turtle.Screen()
@@ -95,8 +96,33 @@ def rectcursive(width, heihgt, depth ,linewidth=3):
             my_turtle.right(90)
         rectcursive(width * 1.25, heihgt * 1.25, depth - 1, linewidth * 1.25)
 
-rectcursive(40, 15, 12, 1)
+#rectcursive(40, 15, 12, 1)
 
+def bracket_recursion(size, depth, x=-300, y=0):
+    my_turtle.penup()
+    my_turtle.goto(x, y)
+    my_turtle.pendown()
+    my_turtle.setheading(90)
+    my_turtle.forward(size)
+    my_turtle.right(90)
+    my_turtle.forward(100)# makes constant
+    pos1 = my_turtle.pos()
 
+    my_turtle.penup()
+    my_turtle.goto(x, y)
+    my_turtle.pendown()
+    my_turtle.setheading(270)
+    my_turtle.forward(size)
+    my_turtle.left(90)
+    my_turtle.forward(100)
+    pos2 = my_turtle.pos()
+
+    if depth > 0:
+        x, y = pos1
+        bracket_recursion(size * .5, depth - 1, x, y)
+        x, y = pos2
+        bracket_recursion(size * .5, depth - 1, x, y)
+
+bracket_recursion(100, 5)
 
 my_screen.exitonclick()
