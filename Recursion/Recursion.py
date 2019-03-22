@@ -27,7 +27,7 @@ import turtle
 import random
 
 my_turtle = turtle.Turtle()
-my_turtle.speed(8)
+my_turtle.speed(0)
 my_turtle.width(3)
 my_turtle.shape('turtle')
 my_screen = turtle.Screen()
