@@ -46,5 +46,9 @@ plt.title('CTA train ridership: 2008-2017')
 plt.legend()
 
 #6  What trend or trends do you see in the data?  Offer at least two hypotheses which might explain the trend(s). (3pts)
+# I see that total bus riders has consistently gone down over the past decade. On the contrary, train usage has slightly gone up.
+# Overall, total transit usage has gone down. This may be because of the rising popularity of ridesharing apps that are much more convenient
+# than public transit. The increase in train usage may be due to the fact that people see the train as scenic and an essential Chicago
+# experience, and many people want to see it.
 
 plt.show()
