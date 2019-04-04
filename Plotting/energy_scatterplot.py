@@ -34,6 +34,7 @@ with open('Chicago_Energy_Benchmarking.csv') as f:
 schools_list = []
 ghg_list = []
 squrft_list = []
+# Only Schools
 for building in data:
     if building[6] == 'K-12 School':
         try:
@@ -44,11 +45,7 @@ for building in data:
             squrft_list.append(squrft)
         except:
             print(building[0], building[2], 'threw an acception')
-'''
-print(schools_list)
-print(ghg_list)
-print(squrft_list)
-'''
+
 
 for item in schools_list:
     item[7] = float(item[7])
@@ -60,14 +57,17 @@ otherlist = sorted(schools_list, key=lambda x: x[7]/x[20])
 print(otherlist)
 
 plt.figure(1)
+# plotting
 plt.scatter(squrft_list, ghg_list, color='red')
+
+# labeling
 plt.xlabel('Gross floor area (square feet)')
 plt.ylabel('Total greenhouse gas emissions (metric tons)')
 plt.title('Energy Emissions of Chicago K-12 Schools over 50,000 Sqare Feet')
 
 # The annotations are hard to see.
 # Parker
-plt.annotate(data[3130][2], xy=(data[3130][7],data[3130][20]), color='darkblue')
+plt.annotate(data[3130][2], xy=(data[3130][7],data[3130][20]), color='darkblue') # Using a discussed technique
 
 # Bottom 3
 plt.annotate(otherlist[0][2], xy=(otherlist[0][7], otherlist[0][20]), color='red')
@@ -79,7 +79,7 @@ plt.annotate(otherlist[-1][2], xy=(otherlist[-1][7], otherlist[-1][20]), color='
 plt.annotate(otherlist[-2][2], xy=(otherlist[-2][7], otherlist[-2][20]), color='lightgreen')
 plt.annotate(otherlist[-3][2], xy=(otherlist[-3][7], otherlist[-3][20]), color='lightgreen')
 
-# Bestfit line
+# Bestfit line # HOW DO I DO THIS???
 m, b = np.polyfit(squrft_list, ghg_list, 1)
 fitx = [50000, 0]
 fity = [b, 50000 * m]
