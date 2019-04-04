@@ -56,7 +56,7 @@ for item in schools_list:
 otherlist = sorted(schools_list, key=lambda x: x[7]/x[20])
 print(otherlist)
 
-plt.figure(1)
+plt.figure(1, facecolor='lightblue', figsize=(12, 6))
 # plotting
 plt.scatter(squrft_list, ghg_list, color='red')
 
@@ -70,21 +70,19 @@ plt.title('Energy Emissions of Chicago K-12 Schools over 50,000 Sqare Feet')
 plt.annotate(data[3130][2], xy=(data[3130][7],data[3130][20]), color='darkblue') # Using a discussed technique
 
 # Bottom 3
-plt.annotate(otherlist[0][2], xy=(otherlist[0][7], otherlist[0][20]), color='red')
-plt.annotate(otherlist[1][2], xy=(otherlist[1][7], otherlist[1][20]), color='red')
-plt.annotate((otherlist[2][2]), xy=(otherlist[2][7], otherlist[2][20]), color='red')
+for i in range (3):
+    plt.annotate(otherlist[i][2], xy=(otherlist[i][7], otherlist[i][20]), color='red')
 
 # Top 3
-plt.annotate(otherlist[-1][2], xy=(otherlist[-1][7], otherlist[-1][20]), color='lightgreen')
-plt.annotate(otherlist[-2][2], xy=(otherlist[-2][7], otherlist[-2][20]), color='lightgreen')
-plt.annotate(otherlist[-3][2], xy=(otherlist[-3][7], otherlist[-3][20]), color='lightgreen')
+for i in range(3):
+    plt.annotate(otherlist[-i - 1][2], xy=(otherlist[-i - 1][7], otherlist[-i - 1][20]), color='green')
 
 # Bestfit line # HOW DO I DO THIS???
 m, b = np.polyfit(squrft_list, ghg_list, 1)
-fitx = [50000, 0]
-fity = [b, 50000 * m]
+fitx = [0, 700000]
+fity = [b, 700000 * m + b]
 
-plt.plot(fitx,fity)
+plt.plot(fitx,fity, linestyle='--')
 
 plt.show()
 
