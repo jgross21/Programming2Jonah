@@ -56,7 +56,7 @@ def h_fractal(size=100, depth=3, x=0, y=0):
         x, y = pos4
         h_fractal(size * .5, depth - 1, x, y)
 
-# h_fractal()
+h_fractal()
 
 #2)  Using the turtle library, create any of the other recursive patterns in the data folder. 
 #  Challenge yourself to match your pattern as closely as you can to the image.  (10pts)
@@ -119,7 +119,7 @@ def snowflake_fractal(size=200, depth=3, x=0, y=0):
         x, y = mypos6
         snowflake_fractal(size * .3, depth - 1, x, y)
 
-# snowflake_fractal()
+#snowflake_fractal()
 
 #3)  Create your own work of recursive art with a repeating pattern of your making (or choose another one from the files).  
 #  It must be a repeated pattern using recursion (not just loops). Snowflakes, trees, and spirals are a common choice.  
@@ -156,7 +156,7 @@ def my_fractal(size=200, depth=3, x=-100, y=-100):
         my_fractal(size * .5, depth - 1, x, y)
 
 
-my_fractal()
+#my_fractal()
 
 
 #  General expectations for all problems
