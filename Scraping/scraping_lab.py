@@ -6,7 +6,7 @@
 # Day, date, description, high and low temp, chance of rain, and wind. (2pts each)
 # Print the weather for each of the next 10 days to the user in readable sentences.
 # You can customize the text as you like, but it should be readable as a sentence without errors. (10pts)
-# You will need to target specific classes or other attributes to pull some parts of the data.
+# You will need to target specific Kivy or other attributes to pull some parts of the data.
 # Sample sentence:  
 # Wednesday, April 4 will be Partly Cloudy/Windy with a High of 37 degrees and a low of 25, humidity at 52%.  There is 0% chance of rain with winds out of the WNW at 22 mph.
 

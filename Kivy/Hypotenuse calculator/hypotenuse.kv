@@ -1,0 +1,63 @@
+<hypotenuseLayout>:
+    orientation: 'vertical'
+    id: calculator
+    leg1: _leg1
+    leg2: _leg2
+    answer: answer
+    canvas:
+        Color:
+            rgba:[0, 73, 83, .5] #(last value is opacity)
+        Rectangle:
+            pos:self.x, self.y
+            size: self.width, self.height
+    Label:
+        text: 'Hypotenuse Calculator'
+        size_hint_y: 2
+        font_size: 70
+        color: [192,192,192, 1]
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        Label:
+            text: 'Leg 1'
+            size_hint_x: 1
+            font_size: 30
+            color: [192,192,192, 1]
+        TextInput:
+            id: _leg1
+            size_hint_x:3
+            font_size: 25
+            input_filter: 'float'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        Label:
+            text: 'Leg 2'
+            size_hint_x: 1
+            font_size: 30
+            color: [192,192,192, 1]
+        TextInput:
+            size_hint_x:3
+            id: _leg2
+            font_size: 25
+            input_filter: 'float'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        Button:
+            text: 'Calculate'
+            size_hint_x: 2
+            font_size: 30
+            on_press: calculator.calculate()
+            background_color: [76/255,187/255,23/255, .5] #(last value is opacity)
+            color: [50,50,50, 1]
+        Label:
+            text: 'Hypotenuse:'
+            font_size: 30
+            color: [192,192,192, 1]
+        Label:
+            text: '0'
+            font_size: 30
+            id: answer
+            color: [192,192,192, 1]
+

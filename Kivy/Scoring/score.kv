@@ -1,0 +1,76 @@
+<CustButton@Button>:
+    # CustButton is a child of the button class
+    font_size: 60
+
+<CustLabel@Label>:
+    font_size: 32
+
+<CustBoxLayout@BoxLayout>:
+    orientation: 'horizontal'
+
+
+<ScoreLayout>:
+    orientation: 'vertical'
+    home: home
+    away: away
+    id: scorer
+    CustBoxLayout:
+        CustLabel:
+            text: 'Score Keeper'
+            size_hint_x: 3
+            font_size: 50
+        CustButton:
+            text: 'Clear'
+            on_press: scorer.reset()
+            font_size: 40
+    CustBoxLayout:
+        CustLabel:
+            text: 'HOME'
+            canvas:
+                Color:
+                    rgba: [0, 102/255, 255/255, .5]
+                Rectangle:
+                    pos: self.x, self.y
+                    size: self.width, self.height
+        CustLabel:
+            text: 'AWAY'
+            canvas:
+                Color:
+                    rgba: [255, 0, 0, .5]
+                Rectangle:
+                    pos: self.x, self.y
+                    size: self.width, self.height
+    CustBoxLayout:
+        CustLabel:
+            id: home
+            text: '0'
+            canvas:
+                Color:
+                    rgba: [0, 102/255, 255/255, .5]
+                Rectangle:
+                    pos: self.x, self.y
+                    size: self.width, self.height
+        CustLabel:
+            text: '0'
+            id: away
+            canvas:
+                Color:
+                    rgba: [255, 0, 0, .5]
+                Rectangle:
+                    pos: self.x, self.y
+                    size: self.width, self.height
+    CustBoxLayout:
+        CustButton:
+            on_press: scorer.change_score(home, 1)
+            text: '+'
+        CustButton:
+            on_press: scorer.change_score(home, -1)
+            text: '-'
+        CustButton:
+            on_press: scorer.change_score(away, 1)
+            text: '+'
+        CustButton:
+            on_press: scorer.change_score(away, -1)
+            text: '-'
+
+
