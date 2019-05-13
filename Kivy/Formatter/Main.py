@@ -54,3 +54,4 @@ class FormatterLayout(BoxLayout):
 if __name__ == '__main__':
     app = FormatterApp()
     app.run()
+
