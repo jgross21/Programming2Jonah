@@ -1,0 +1,109 @@
+<CustLabel@Label>:
+    font_size: 40
+    color: 1, 1, 1, 1
+
+
+<FormatterLayout>:
+    orientation: 'vertical'
+    label: label
+    spinner: spinner
+    red: red
+    green: green
+    blue: blue
+
+    Label:
+        text: 'Hi there'
+        font_size: 50
+        font_name: 'Mexcellent.ttf'
+        id: label
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        CustLabel:
+            text: 'Choose your font'
+        Spinner:
+            id: spinner
+            text: 'Mexcellent'
+            font_name: 'Mexcellent.ttf'
+            font_size: 45
+            values: ['Mexcellent', 'Roboto']
+            on_text: root.font_change(self.text)
+
+    BoxLayout:
+        orientation: 'horizontal'
+        CustLabel:
+            text: 'Choose Text'
+            size_hint_x: 3.5
+        CustLabel:
+            font_size: 30
+            text: 'Hi there'
+        CheckBox:
+            group: 'text'
+            on_active: root.change_text('Hi there')
+        CustLabel:
+            font_size: 30
+            text: 'Hola'
+        CheckBox:
+            group: 'text'
+            on_active: root.change_text('Hola')
+        CustLabel:
+            font_size: 30
+            text: 'Bonjour'
+        CheckBox:
+            group: 'text'
+            on_active: root.change_text('Bonjour')
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y:.75
+
+        CustLabel:
+            text: 'Red'
+            color: 1, 0, 0, 1
+        Slider:
+            min: 0
+            max: 1
+            value: 0
+            step: .05
+            id: red
+            on_touch_move: root.change_window(self.value, green.value, blue.value)
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y:.75
+
+        CustLabel:
+            text: 'Green'
+            color: 0, 1, 0, 1
+        Slider:
+            min: 0
+            max: 1
+            value: 0
+            step: .05
+            id: green
+            on_touch_move: root.change_window(red.value, self.value, blue.value)
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y:.75
+
+        CustLabel:
+            text: 'Blue'
+            color: 0, 0, 1, 1
+        Slider:
+            min: 0
+            max: 1
+            value: 0
+            step: .05
+            id: blue
+            on_touch_move: root.change_window(red.value, green.value, self.value)
+
+    BoxLayout:
+        CustLabel:
+            text: 'Text Lights'
+        Switch:
+            active: False
+            on_active: root.text_on(self.active)
+
+

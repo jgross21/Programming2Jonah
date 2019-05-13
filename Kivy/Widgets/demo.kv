@@ -1,0 +1,97 @@
+<CustLabel@Label>:
+    color: 0, 0, 0, 1
+
+<CustPopup@Popup>:
+    size_hint_x: 1
+    size_hint_y: 1
+    auto_dismiss: False
+    Button:
+        text: 'Close'
+        on_press: root.dismiss()
+
+<DemoLayout>:
+    orientation: 'vertical'
+    switch_text: switch_text
+    slider_text: slider_text
+    id: demo
+    BoxLayout:
+        orientation: 'horizontal'
+        CustLabel:
+            text: str(switch.active)
+            id: switch_text
+        Switch:
+            active: False
+            id: switch
+            on_active: root.switch_on(self, self.active)
+    BoxLayout:
+        orientation: 'horizontal'
+        CustLabel:
+            id: slider_text
+            text: str(slider.value)
+        Slider:
+            id: slider
+            min: 0
+            max: 1
+            value: 0
+            step: .01
+            slider_change: demo.slider_change(self, self.value)
+    BoxLayout:
+        orientation: 'horizontal'
+        CustLabel:
+            id: check_text
+            text: 'CheckBox'
+        CheckBox:
+            on_active: root.check_box(self.active)
+    BoxLayout:
+        orientation: 'horizontal'
+        CustLabel:
+            id: radio_text
+            text: 'Choose your favorite'
+            size_hint_x: 3
+        CustLabel:
+            text: 'Ice Cream'
+        CheckBox:
+            group: 'favorite'
+        CustLabel:
+            text: 'Cake'
+        CheckBox:
+            group: 'favorite'
+    BoxLayout:
+        orientation: 'horizontal'
+        # ADD POPUP HERE
+
+    BoxLayout:
+        orientation: 'horizontal'
+        canvas:
+            Rectangle:
+                source: 'dog.jpeg'
+
+        TabbedPanel:
+            do_default_tab: False
+
+            TabbedPanelItem:
+                text: '1st Tab'
+                Label:
+                    text: 'Content of first tab.'
+                    color: 1, 0, 0, 1
+            TabbedPanelItem:
+                text: '2nd Tab'
+                Label:
+                    text: 'Content of second tab.'
+                    color: 0, 1, 0, 1
+            TabbedPanelItem:
+                text: '3rd Tab'
+                Label:
+                    text: 'Content of third tab.'
+                    color: 0, 0, 1, 1
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 1.5
+
+        CustLabel:
+            text: spinner.text
+        Spinner:
+            id: spinner
+            text: 'First'
+            values: ['First', 'Second', 'Third']
+            on_text: root.spinner_clicked(self.text)
